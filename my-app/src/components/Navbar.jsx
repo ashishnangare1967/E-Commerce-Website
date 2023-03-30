@@ -1,8 +1,10 @@
 import { React, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Logo from '../images/Logo.png'
 import { HamburgerIcon, SearchIcon, CloseIcon } from "@chakra-ui/icons";
 
 import { Center } from "@chakra-ui/react";
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -11,10 +13,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-screen h-[80px] z-10 bg-zinc-200 drop-shadow-lg">
-      <div className="px-2 flex justify-between item-center w-full h-full">
+    <div className="w-screen h-[80px] z-10 bg-zinc-200 fixed">
+      <div className="px-2 flex justify-between item-center w-full h-full m-auto">
         <div className="flex items-center border-solid border-2 w-full mr-4">
-          <h2 className="text-3xl font-bold mr-4 sm:text-4xl">ASHISH</h2>
+          <h2 className=""><img className="object-fill w-50 md:w-60 md:h-12 h-10 pr-5 rounded-xl" src={Logo}/></h2>
           <div className="flex w-full border-solid border-2 border-gray-300 mr-">
             <input className="rounded-md  w-full border-solid border-2 border-gray-300 "></input>
             <box className="bg-slate-100 rounded-md">
