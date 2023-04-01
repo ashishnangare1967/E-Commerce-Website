@@ -18,7 +18,6 @@ import img_6 from "../images/grid_img/img_6.jpg";
 const Hero = () => {
   return (
     <div className="w-full  bg-zinc-100 flex flex-col justify-between pt-28">
-      
       <div className="mt-4 ">
         <img className="hidden md:flex w-{85%} m-auto" src={bgImg} />
         <img className="md:hidden w-full" src={smImg} />
@@ -28,11 +27,10 @@ const Hero = () => {
         <img className=" block" src={img_2} alt="grid_img" />
         <img className=" block" src={img_3} alt="grid_img" />
         <img className=" block" src={img_4} alt="grid_img" />
-        <img className= "block" src={img_5} alt="grid_img" />
+        <img className="block" src={img_5} alt="grid_img" />
         <img className=" block" src={img_6} alt="grid_img" />
       </div>
-      </div>
- 
+    </div>
   );
 };
 
