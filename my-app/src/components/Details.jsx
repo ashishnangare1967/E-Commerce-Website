@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../Authentication/AuthContext";
+import gold from "../images/gold.jpg";
 
 const getdata = async (url) => {
   try {
@@ -12,6 +13,9 @@ const getdata = async (url) => {
     console.log(error);
   }
 };
+function getStar() {
+  return <img className="object-contain pb-1 h-6 w-8 inline " src={gold} />;
+}
 
 const Details = () => {
   const { id } = useParams();
@@ -20,6 +24,7 @@ const Details = () => {
   const [loading, setLoding] = useState(false);
   const [err, seterr] = useState(false);
   const [go, setGo] = useState(false);
+  const [added, setAdded] = useState(true);
 
   const [res, setRes] = React.useState({});
   // console.log(id);
@@ -41,6 +46,7 @@ const Details = () => {
   };
 
   const postCart = () => {
+    setAdded(p=>!p)
     return axios.post("http://localhost:3500/cart", res);
   };
 
@@ -49,19 +55,38 @@ const Details = () => {
   }, [id, gender]);
 
   return (
-    <div className="p-24">
+    <div className="p-44 flex justify-center items-center bg-zinc-200">
       {loading ? (
-        <h1>sds</h1>
+        <h1 className="">Loading....</h1>
       ) : (
         <>
-          <h3>{res.id}</h3>
           {go && (
             <img
+              className="object-contain pt-2 h-68 w-86"
               src={res.image === undefined ? res.images[1] : res.image}
               alt="asterisk"
             />
           )}
-          <button onClick={postCart}>Add to Cart</button>
+          <div>
+            <ul>
+              <li className="text-xl font-bold mb-auto">{res.brand}</li>
+              <li className="text-xl mt-2 font-semibold mb-auto">
+                {res.title}
+              </li>
+              <li className="">
+                Rating : {res.rating ? res.rating : 4.44}
+                {getStar()}
+              </li>
+              <li>Available Quantity: {res.quantity ? res.quantity : 43}</li>
+              {res.description && (
+                <li className="reading-3 py-0 text-md">
+                  Description: {res.description}
+                </li>
+              )}
+              <li>Rs. {res.price} </li>
+            </ul>
+            <button className="ml-4" onClick={postCart}>{added ? "add to Cart" : "Added"}</button>
+          </div>
         </>
       )}
     </div>

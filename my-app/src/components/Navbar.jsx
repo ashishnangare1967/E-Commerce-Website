@@ -21,17 +21,17 @@ const Navbar = () => {
               src={Logo}
             />
           </h2>
-          <div className="flex w-full border-solid border-2 border-gray-300 mr-">
+          <div className="flex w-full border-solid border-2 border-gray-300">
             <input className="rounded-md  w-full border-solid border-2 border-gray-300 "></input>
             <box className="bg-slate-100 rounded-md">
               <SearchIcon className="text-3xl" />
             </box>
           </div>
           <ul className="hidden text-1.4xl md:flex">
-            <li className="border-b-2 border-zink-300"><Link to="/">Home</Link></li>
-            <li className="border-b-2 border-zink-300">About</li>
-            <li className="border-b-2 border-zink-300">Support</li>
-            <li className="border-b-2 border-zink-300">
+            <li className="border-b-2 border-zink-300 font-semibold"><Link to="/">Home</Link></li>
+            <li className="border-b-2 border-zink-300 font-semibold">About</li>
+            <li className="border-b-2 border-zink-300 font-semibold">Support</li>
+            <li className="border-b-2 border-zink-300 font-semibold">
               <Link to="/Cart">Cart</Link>
             </li>
           </ul>
@@ -73,8 +73,6 @@ const Navbar = () => {
           <button className="mx-7 h-10 text-center my-3">Sign Up</button>
           <button className="mx-7 h-10 text-center">Login</button>
         </div>
-      </ul>
-      <ul className="flex gap-4">
         <li>
           <Link to="host/kids">Kids</Link>
         </li>
@@ -97,7 +95,32 @@ const Navbar = () => {
           <Link to="/host/women_watches">Women Watches</Link>
         </li>
       </ul>
+      <ul className="hidden md:flex gap-4 justify-between px-3 py-2 bg-zinc-300 ">
+        <li>
+          <Link to="host/kids">Kids</Link>
+        </li>
+        <li>
+          <Link to="/host/men_shoes">Mens Shooes</Link>
+        </li>
+        <li>
+          <Link to="/host/men_clothes">Men Clothes</Link>
+        </li>
+        <li>
+          <Link to="/host/men_watches">Men Watches</Link>
+        </li>
+        <li>
+          <Link to="/host/sunglasses">Sunglasses</Link>
+        </li>
+        <li>
+          <Link to="/host/women_clothes">Women</Link>
+        </li>
+        <li>
+          <Link to="/host/women_watches">Women Watches</Link>
+        </li>
+      </ul>
+      
     </div>
+  
   );
 };
 
