@@ -2,8 +2,9 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 const HostLayout = () => {
   return (
-    <div className="flex pt-40 relative">
-      <ul className="pt-10">
+    <div className="flex justify-around pt-40  bg-slate-100">
+      <ul className="pt-10 font-semibold flex-col bg-slate-200">
+        <h1 className="font-semibold">Categories</h1>
         <li>
           <Link to="kids">Kids</Link>
         </li>
@@ -29,6 +30,7 @@ const HostLayout = () => {
       <div className="">
         <Outlet />
       </div>
+      
     </div>
   );
 };

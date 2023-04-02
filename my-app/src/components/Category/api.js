@@ -16,7 +16,6 @@ const ApigetData = ({
     function getData() {
       axios.get(`http://localhost:3500/${gender}`, {}).then((res) => {
         setproducts(res.data);
-        console.log(res.data);
         setLoading((p) => false);
       });
     }
