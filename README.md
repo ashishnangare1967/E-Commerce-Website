@@ -1,6 +1,7 @@
 # zippy-fly-9898
 Technologies we used
 HTML , CSS, JAVASCRIPT, REACT JS, TAILWIND CSS
+Netlify Link: https://eloquent-chaja-466975.netlify.app/
 
 json server for data flow.
 
